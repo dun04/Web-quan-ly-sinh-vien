@@ -563,18 +563,18 @@
 
   </div>
 
-  <!-- FLOATING QUICK SUPPORT & CONTACT BUTTON (From thanhdatxxx/chuyende2) -->
+  <!-- FLOATING QUICK SUPPORT & CONTACT BUTTON -->
   <div class="floating-contact-wrapper" id="floating-contact-widget">
     <div class="floating-sub-actions" id="floating-sub-menu">
-      <div class="floating-round-btn" style="background:#f97316;" title="Hotline tư vấn" onclick="app.toast('info', 'Hotline Đào tạo: 0383 177 942')">
+      <a href="tel:0869215384" class="floating-round-btn" style="background:#f97316; text-decoration:none; color:white; display:flex; align-items:center; justify-content:center;" title="Hotline: 0869 215 384" onclick="app.toast('info', 'Hotline liên hệ: 0869 215 384')">
         <i class="fa-solid fa-phone-volume"></i>
-      </div>
-      <div class="floating-round-btn" style="background:#2563eb;" title="Cổng hỗ trợ Zalo" onclick="app.toast('info', 'Zalo hỗ trợ sinh viên: 0383 177 942')">
+      </a>
+      <div class="floating-round-btn" style="background:#0068ff; cursor:pointer;" title="Zalo: 0869 215 384 (Đạt)" onclick="app.openModal('modal-zalo-contact')">
         <i class="fa-solid fa-comment-dots"></i>
       </div>
-      <div class="floating-round-btn" style="background:#3b82f6;" title="Facebook Trường" onclick="window.open('https://facebook.com', '_blank')">
+      <a href="https://www.facebook.com/dat.nv04?locale=vi_VN" target="_blank" rel="noopener noreferrer" class="floating-round-btn" style="background:#1877f2; text-decoration:none; color:white; display:flex; align-items:center; justify-content:center;" title="Facebook: Đạt (dat.nv04)">
         <i class="fa-brands fa-facebook-f"></i>
-      </div>
+      </a>
     </div>
     <div class="floating-main-trigger" onclick="app.toggleContactWidget()">
       <i class="fa-solid fa-headset"></i>
@@ -953,11 +953,49 @@
     </div>
   </div>
 
+  <!-- MODAL ZALO CONTACT & QR CODE -->
+  <div class="modal-backdrop" id="modal-zalo-contact">
+    <div class="modal-box" style="max-width: 400px; padding: 24px; text-align: center;">
+      <div class="modal-head" style="margin-bottom: 12px; border-bottom: none; padding-bottom: 0;">
+        <div style="display: flex; align-items: center; gap: 10px; text-align: left;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(0, 104, 255, 0.12); color: #0068ff; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+            <i class="fa-solid fa-comment-dots"></i>
+          </div>
+          <div>
+            <h3 style="font-size: 16px; margin: 0;">Danh Thiếp Zalo</h3>
+            <span style="font-size: 12px; color: var(--text-dim);">Quét mã QR hoặc gọi điện kết bạn</span>
+          </div>
+        </div>
+        <button onclick="app.closeModal('modal-zalo-contact')" class="btn-icon" style="width: 32px; height: 32px;">&times;</button>
+      </div>
+
+      <div style="background: #ffffff; padding: 14px; border-radius: 16px; display: inline-block; margin: 8px auto 14px auto; box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
+        <img src="static/img/zalo-qr.png" alt="Zalo QR Đạt - 0869215384" style="max-width: 220px; width: 100%; height: auto; border-radius: 10px; display: block;">
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <h4 style="font-size: 16px; margin: 0 0 4px 0; color: var(--text-main); font-weight: 700;">Đạt (Zalo)</h4>
+        <div style="color: var(--primary); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <i class="fa-solid fa-phone"></i> <span>0869 215 384</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <a href="https://zalo.me/0869215384" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1; text-decoration: none; justify-content: center; font-size: 13.5px;">
+          <i class="fa-solid fa-paper-plane"></i> Nhắn Tin Zalo
+        </a>
+        <button type="button" onclick="app.closeModal('modal-zalo-contact')" class="btn btn-secondary" style="font-size: 13.5px;">
+          <i class="fa-solid fa-xmark"></i> Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Container -->
   <div id="toast-container"></div>
 
   <!-- Scripts -->
   <script src="static/js/firebase-config.js"></script>
-  <script src="static/js/app.js?v=3.7"></script>
+  <script src="static/js/app.js?v=3.8"></script>
 </body>
 </html>
