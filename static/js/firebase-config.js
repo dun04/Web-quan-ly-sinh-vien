@@ -16,7 +16,7 @@
  */
 
 const FIREBASE_CONFIG = {
-  databaseURL: "" // Dán URL Realtime Database của bạn vào đây
+  databaseURL: "https://websinhvien-7ccec-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
 
 // Cloud Database Sync Helper
