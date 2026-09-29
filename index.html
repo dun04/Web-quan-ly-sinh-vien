@@ -41,28 +41,21 @@
         <form onsubmit="app.handleLogin(event)">
           <div class="form-group">
             <label><i class="fa-solid fa-user"></i> Tên đăng nhập</label>
-            <input type="text" id="login-username" class="form-input" placeholder="admin, teacher1, student1..." value="admin" required>
+            <input type="text" id="login-username" class="form-input" placeholder="Nhập tên đăng nhập..." required>
           </div>
           <div class="form-group">
             <label><i class="fa-solid fa-lock"></i> Mật khẩu</label>
-            <input type="password" id="login-password" class="form-input" placeholder="Mật khẩu" value="123" required>
+            <input type="password" id="login-password" class="form-input" placeholder="Nhập mật khẩu..." required>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 14px; padding: 13px; font-size: 15px;">
             <i class="fa-solid fa-right-to-bracket"></i> Đăng Nhập Hệ Thống
           </button>
+          <div style="text-align: center; margin-top: 14px;">
+            <button type="button" onclick="app.openForgotPasswordModal()" style="background: none; border: none; color: var(--primary); font-size: 13.5px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px;">
+              <i class="fa-solid fa-key"></i> Quên mật khẩu?
+            </button>
+          </div>
         </form>
-
-        <!-- Sample Accounts Quick Guide -->
-        <div style="margin-top: 20px; padding: 12px 14px; background: var(--bg-subtle); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); font-size: 12.5px;">
-          <div style="font-weight: 700; color: var(--primary); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-circle-info"></i> Tài khoản mẫu thử nghiệm (Mật khẩu: 123):
-          </div>
-          <div style="color: var(--text-muted); line-height: 1.7;">
-            • 🔑 <strong>Quản trị viên (Admin):</strong> <code style="color:var(--primary); font-weight:600;">admin</code><br>
-            • 👨‍🏫 <strong>Giảng viên (Teacher):</strong> <code style="color:var(--primary); font-weight:600;">teacher1</code> hoặc <code style="color:var(--primary); font-weight:600;">teacher2</code><br>
-            • 🎓 <strong>Sinh viên (Student):</strong> <code style="color:var(--primary); font-weight:600;">student1</code>, <code style="color:var(--primary); font-weight:600;">student2</code>, <code style="color:var(--primary); font-weight:600;">student3</code>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -919,11 +912,52 @@
     </div>
   </div>
 
+  <!-- Modal Quên Mật Khẩu -->
+  <div class="modal-backdrop" id="modal-forgot-password">
+    <div class="modal-box" style="max-width: 480px; padding: 24px;">
+      <div class="modal-head" style="margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(249, 115, 22, 0.12); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 18px;">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <div>
+            <h3 style="font-size: 17px; margin: 0;">Khôi Phục Mật Khẩu</h3>
+            <span style="font-size: 12.5px; color: var(--text-dim);">Đặt lại mật khẩu cho tài khoản người dùng</span>
+          </div>
+        </div>
+        <button onclick="app.closeModal('modal-forgot-password')" class="btn-icon" style="width: 32px; height: 32px;">&times;</button>
+      </div>
+
+      <form onsubmit="app.handleForgotPassword(event)">
+        <div class="form-group">
+          <label><i class="fa-solid fa-user"></i> Tên đăng nhập, Email hoặc Mã số</label>
+          <input type="text" id="forgot-identifier" class="form-input" placeholder="Ví dụ: admin hoặc an.nv@student.edu.vn" required>
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-lock"></i> Mật khẩu mới</label>
+          <input type="password" id="forgot-new-password" class="form-input" placeholder="Nhập mật khẩu mới..." required minlength="3">
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-shield-check"></i> Xác nhận mật khẩu mới</label>
+          <input type="password" id="forgot-confirm-password" class="form-input" placeholder="Nhập lại mật khẩu mới..." required minlength="3">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+          <button type="button" onclick="app.closeModal('modal-forgot-password')" class="btn btn-secondary">
+            <i class="fa-solid fa-xmark"></i> Hủy
+          </button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-check"></i> Đặt Lại Mật Khẩu
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Toast Container -->
   <div id="toast-container"></div>
 
   <!-- Scripts -->
   <script src="static/js/firebase-config.js"></script>
-  <script src="static/js/app.js?v=3.6"></script>
+  <script src="static/js/app.js?v=3.7"></script>
 </body>
 </html>

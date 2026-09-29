@@ -646,6 +646,54 @@ const app = {
     this.renderAppForUser(user);
   },
 
+  openForgotPasswordModal() {
+    const ident = document.getElementById('forgot-identifier');
+    const newPass = document.getElementById('forgot-new-password');
+    const confirmPass = document.getElementById('forgot-confirm-password');
+    if (ident) ident.value = '';
+    if (newPass) newPass.value = '';
+    if (confirmPass) confirmPass.value = '';
+    this.openModal('modal-forgot-password');
+  },
+
+  handleForgotPassword(event) {
+    event.preventDefault();
+    const identifier = (document.getElementById('forgot-identifier')?.value || '').trim();
+    const newPassword = (document.getElementById('forgot-new-password')?.value || '').trim();
+    const confirmPassword = (document.getElementById('forgot-confirm-password')?.value || '').trim();
+
+    if (!identifier) {
+      this.toast('error', 'Vui lòng nhập tên đăng nhập, email hoặc mã số!');
+      return;
+    }
+
+    if (newPassword.length < 3) {
+      this.toast('error', 'Mật khẩu mới phải có ít nhất 3 ký tự!');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      this.toast('error', 'Mật khẩu xác nhận không trùng khớp!');
+      return;
+    }
+
+    const user = store.data.users.find(u => 
+      (u.username && u.username.toLowerCase() === identifier.toLowerCase()) || 
+      (u.email && u.email.toLowerCase() === identifier.toLowerCase()) ||
+      (u.code && u.code.toLowerCase() === identifier.toLowerCase())
+    );
+
+    if (!user) {
+      this.toast('error', 'Không tìm thấy tài khoản tương ứng với thông tin đã nhập!');
+      return;
+    }
+
+    user.password = newPassword;
+    store.save();
+    this.closeModal('modal-forgot-password');
+    this.toast('success', `Đã đặt lại mật khẩu mới cho tài khoản ${user.fullname} (${user.username}) thành công!`);
+  },
+
   logout() {
     store.setCurrentUser(null);
     this.toast('info', 'Bạn đã đăng xuất');
