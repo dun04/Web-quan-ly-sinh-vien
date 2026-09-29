@@ -477,8 +477,30 @@ class AppStore {
     this.currentUser = savedUser ? JSON.parse(savedUser) : null;
   }
 
+  async syncFromFirebase() {
+    if (typeof firebaseService !== 'undefined' && firebaseService.isConfigured) {
+      const cloudData = await firebaseService.fetchAllData();
+      if (cloudData && cloudData.users) {
+        this.data = {
+          users: Array.isArray(cloudData.users) ? cloudData.users : Object.values(cloudData.users || {}),
+          courses: Array.isArray(cloudData.courses) ? cloudData.courses : Object.values(cloudData.courses || {}),
+          schedules: Array.isArray(cloudData.schedules) ? cloudData.schedules : Object.values(cloudData.schedules || {}),
+          enrollments: Array.isArray(cloudData.enrollments) ? cloudData.enrollments : Object.values(cloudData.enrollments || {}),
+          attendance: Array.isArray(cloudData.attendance) ? cloudData.attendance : Object.values(cloudData.attendance || {})
+        };
+        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+        if (typeof app !== 'undefined' && app.refreshActiveView) {
+          app.refreshActiveView();
+        }
+      }
+    }
+  }
+
   save() {
     localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+    if (typeof firebaseService !== 'undefined' && firebaseService.isConfigured) {
+      firebaseService.saveData(this.data);
+    }
   }
 
   setCurrentUser(user) {
@@ -501,10 +523,17 @@ const app = {
   init() {
     this.initTheme();
     this.bindEvents();
+    store.syncFromFirebase();
     if (store.currentUser) {
       this.renderAppForUser(store.currentUser);
     } else {
       this.showLogin();
+    }
+  },
+
+  refreshActiveView() {
+    if (store.currentUser && this.activeSection) {
+      this.switchSection(this.activeSection);
     }
   },
 

@@ -1,0 +1,340 @@
+{
+  "users": {
+    "u_admin_1": {
+      "id": "u_admin_1",
+      "username": "admin",
+      "password": "123",
+      "role": "admin",
+      "fullname": "TS. Nguyễn Hoàng Nam",
+      "code": "AD001",
+      "email": "nam.nh@university.edu.vn",
+      "phone": "0901 234 567",
+      "department": "Phòng Quản lý Đào tạo",
+      "title": "Trưởng phòng Đào tạo",
+      "age": 42,
+      "status": "active"
+    },
+    "u_teacher_1": {
+      "id": "u_teacher_1",
+      "username": "teacher1",
+      "password": "123",
+      "role": "teacher",
+      "fullname": "ThS. Lê Thị Mai",
+      "code": "GV001",
+      "email": "mai.lt@university.edu.vn",
+      "phone": "0912 345 678",
+      "department": "Công nghệ thông tin",
+      "title": "Giảng viên chính",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80",
+      "age": 36,
+      "status": "active"
+    },
+    "u_teacher_2": {
+      "id": "u_teacher_2",
+      "username": "teacher2",
+      "password": "123",
+      "role": "teacher",
+      "fullname": "TS. Trần Quốc Bảo",
+      "code": "GV002",
+      "email": "bao.tq@university.edu.vn",
+      "phone": "0988 765 432",
+      "department": "Khoa học máy tính",
+      "title": "Phó chủ nhiệm bộ môn",
+      "age": 40,
+      "status": "active"
+    },
+    "u_student_1": {
+      "id": "u_student_1",
+      "username": "student1",
+      "password": "123",
+      "role": "student",
+      "fullname": "Nguyễn Văn An",
+      "code": "SV2026001",
+      "email": "an.nv@student.edu.vn",
+      "phone": "0345 678 901",
+      "department": "Công nghệ thông tin",
+      "title": "Sinh viên Khóa K66",
+      "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=80",
+      "age": 20,
+      "classGroup": "CNTT1-K66",
+      "status": "active"
+    },
+    "u_student_2": {
+      "id": "u_student_2",
+      "username": "student2",
+      "password": "123",
+      "role": "student",
+      "fullname": "Trần Thị Bích",
+      "code": "SV2026002",
+      "email": "bich.tt@student.edu.vn",
+      "phone": "0356 789 012",
+      "department": "Hệ thống thông tin",
+      "title": "Sinh viên Khóa K66",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80",
+      "age": 20,
+      "classGroup": "HTTT-K66",
+      "status": "active"
+    },
+    "u_student_3": {
+      "id": "u_student_3",
+      "username": "student3",
+      "password": "123",
+      "role": "student",
+      "fullname": "Phạm Quốc Cường",
+      "code": "SV2026003",
+      "email": "cuong.pq@student.edu.vn",
+      "phone": "0367 890 123",
+      "department": "Khoa học máy tính",
+      "title": "Sinh viên Khóa K66",
+      "age": 20,
+      "classGroup": "KHMT-K66",
+      "status": "active"
+    }
+  },
+  "courses": {
+    "c_1": {
+      "id": "c_1",
+      "code": "INT3306",
+      "name": "Phát triển Ứng dụng Web Hiện đại",
+      "credits": 3,
+      "department": "Công nghệ thông tin",
+      "pricePerCredit": 450000,
+      "semester": "Học kỳ 1 - 2026",
+      "description": "Học kiến trúc Single Page Apps, RESTful APIs, State Management, Glassmorphism UI.",
+      "gradeStartDate": "2026-09-15",
+      "gradeEndDate": "2026-10-20",
+      "gradeLocked": false
+    },
+    "c_2": {
+      "id": "c_2",
+      "code": "INT2204",
+      "name": "Cơ sở Dữ liệu & Hệ Quản trị CSDL",
+      "credits": 4,
+      "department": "Hệ thống thông tin",
+      "pricePerCredit": 450000,
+      "semester": "Học kỳ 1 - 2026",
+      "description": "Thiết kế mô hình quan hệ ER, truy vấn SQL nâng cao, indexing và tối ưu hóa hiệu năng.",
+      "gradeStartDate": "2026-09-20",
+      "gradeEndDate": "2026-10-25",
+      "gradeLocked": false
+    },
+    "c_3": {
+      "id": "c_3",
+      "code": "INT3110",
+      "name": "Cấu trúc Dữ liệu & Giải thuật Nâng cao",
+      "credits": 3,
+      "department": "Khoa học máy tính",
+      "pricePerCredit": 450000,
+      "semester": "Học kỳ 1 - 2026",
+      "description": "Cây cân bằng, đồ thị, quy hoạch động và phân tích độ phức tạp thuật toán.",
+      "gradeStartDate": "2026-09-10",
+      "gradeEndDate": "2026-10-15",
+      "gradeLocked": false
+    },
+    "c_4": {
+      "id": "c_4",
+      "code": "MAT1093",
+      "name": "Đại số Tuyến tính & Giải tích Ứng dụng",
+      "credits": 3,
+      "department": "Toán tin",
+      "pricePerCredit": 420000,
+      "semester": "Học kỳ 1 - 2026",
+      "description": "Không gian vector, ma trận biến đổi, ứng dụng trong Machine Learning và Đồ họa.",
+      "gradeStartDate": "2026-09-01",
+      "gradeEndDate": "2026-09-30",
+      "gradeLocked": false
+    }
+  },
+  "schedules": {
+    "sch_1": {
+      "id": "sch_1",
+      "courseId": "c_1",
+      "courseCode": "INT3306",
+      "courseName": "Phát triển Ứng dụng Web Hiện đại",
+      "teacherId": "u_teacher_1",
+      "teacherName": "ThS. Lê Thị Mai",
+      "room": "Phòng Lab 402 - Tòa A2",
+      "dayOfWeek": "Thứ Hai",
+      "week": 1,
+      "startTime": "07:30",
+      "endTime": "10:30"
+    },
+    "sch_2": {
+      "id": "sch_2",
+      "courseId": "c_2",
+      "courseCode": "INT2204",
+      "courseName": "Cơ sở Dữ liệu & Hệ Quản trị CSDL",
+      "teacherId": "u_teacher_2",
+      "teacherName": "TS. Trần Quốc Bảo",
+      "room": "Phòng Lý thuyết 301 - Tòa B1",
+      "dayOfWeek": "Thứ Tư",
+      "week": 1,
+      "startTime": "13:30",
+      "endTime": "16:30"
+    },
+    "sch_3": {
+      "id": "sch_3",
+      "courseId": "c_3",
+      "courseCode": "INT3110",
+      "courseName": "Cấu trúc Dữ liệu & Giải thuật Nâng cao",
+      "teacherId": "u_teacher_1",
+      "teacherName": "ThS. Lê Thị Mai",
+      "room": "Phòng 204 - Tòa A1",
+      "dayOfWeek": "Thứ Sáu",
+      "week": 1,
+      "startTime": "09:30",
+      "endTime": "11:30"
+    }
+  },
+  "enrollments": {
+    "en_1": {
+      "id": "en_1",
+      "studentId": "u_student_1",
+      "courseId": "c_1",
+      "midtermScore": 8.5,
+      "finalScore": 9.0,
+      "attendanceScore": 10,
+      "notes": "Hăng hái phát biểu, bài tập lớn xuất sắc",
+      "tuitionPaid": true
+    },
+    "en_2": {
+      "id": "en_2",
+      "studentId": "u_student_1",
+      "courseId": "c_2",
+      "midtermScore": 7.5,
+      "finalScore": 8.0,
+      "attendanceScore": 9.5,
+      "notes": "Nắm vững lý thuyết cơ sở dữ liệu và SQL",
+      "tuitionPaid": true
+    },
+    "en_3": {
+      "id": "en_3",
+      "studentId": "u_student_1",
+      "courseId": "c_3",
+      "midtermScore": 9.0,
+      "finalScore": 8.5,
+      "attendanceScore": 10,
+      "notes": "Tư duy thuật toán và cấu trúc cây rất tốt",
+      "tuitionPaid": true
+    },
+    "en_4": {
+      "id": "en_4",
+      "studentId": "u_student_1",
+      "courseId": "c_4",
+      "midtermScore": 8.0,
+      "finalScore": 8.5,
+      "attendanceScore": 9.0,
+      "notes": "Hoàn thành tốt đồ án mô hình phân loại ảnh",
+      "tuitionPaid": true
+    },
+    "en_5": {
+      "id": "en_5",
+      "studentId": "u_student_1",
+      "courseId": "c_5",
+      "midtermScore": 8.5,
+      "finalScore": 8.0,
+      "attendanceScore": 9.5,
+      "notes": "Thực hành cấu hình mạng thành thạo",
+      "tuitionPaid": true
+    },
+    "en_6": {
+      "id": "en_6",
+      "studentId": "u_student_2",
+      "courseId": "c_1",
+      "midtermScore": 9.0,
+      "finalScore": 9.5,
+      "attendanceScore": 10,
+      "notes": "Giao diện bài tập thực hành rất đẹp, chỉn chu",
+      "tuitionPaid": true
+    },
+    "en_7": {
+      "id": "en_7",
+      "studentId": "u_student_2",
+      "courseId": "c_2",
+      "midtermScore": 8.0,
+      "finalScore": 8.5,
+      "attendanceScore": 10,
+      "notes": "Thiết kế CSDL chuẩn hóa tốt",
+      "tuitionPaid": true
+    },
+    "en_8": {
+      "id": "en_8",
+      "studentId": "u_student_2",
+      "courseId": "c_3",
+      "midtermScore": 8.5,
+      "finalScore": 8.0,
+      "attendanceScore": 9.0,
+      "notes": "Nắm chắc các giải thuật đệ quy & quy hoạch động",
+      "tuitionPaid": true
+    },
+    "en_9": {
+      "id": "en_9",
+      "studentId": "u_student_2",
+      "courseId": "c_6",
+      "midtermScore": 9.5,
+      "finalScore": 9.0,
+      "attendanceScore": 10,
+      "notes": "App mobile responsive đẹp, trải nghiệm mượt",
+      "tuitionPaid": true
+    },
+    "en_10": {
+      "id": "en_10",
+      "studentId": "u_student_3",
+      "courseId": "c_1",
+      "midtermScore": 7.0,
+      "finalScore": 7.5,
+      "attendanceScore": 8.5,
+      "notes": "Cần chú ý responsive và styling giao diện",
+      "tuitionPaid": true
+    },
+    "en_11": {
+      "id": "en_11",
+      "studentId": "u_student_3",
+      "courseId": "c_2",
+      "midtermScore": 6.5,
+      "finalScore": 7.0,
+      "attendanceScore": 8.0,
+      "notes": "Cần cải thiện câu truy vấn lồng SQL",
+      "tuitionPaid": false
+    },
+    "en_12": {
+      "id": "en_12",
+      "studentId": "u_student_3",
+      "courseId": "c_4",
+      "midtermScore": 7.5,
+      "finalScore": 8.0,
+      "attendanceScore": 9.0,
+      "notes": "Hiểu tốt kiến trúc mạng nơ-ron cơ bản",
+      "tuitionPaid": true
+    },
+    "en_13": {
+      "id": "en_13",
+      "studentId": "u_student_3",
+      "courseId": "c_5",
+      "midtermScore": 8.0,
+      "finalScore": 7.5,
+      "attendanceScore": 9.0,
+      "notes": "Đạt yêu cầu bài thực hành an ninh mạng",
+      "tuitionPaid": false
+    }
+  },
+  "attendance": {
+    "att_1": {
+      "id": "att_1",
+      "scheduleId": "sch_1",
+      "date": "2026-09-29",
+      "records": [
+        {
+          "studentId": "u_student_1",
+          "status": "present",
+          "note": ""
+        },
+        {
+          "studentId": "u_student_2",
+          "status": "late",
+          "note": "Kẹt xe 15p"
+        }
+      ]
+    }
+  }
+}
